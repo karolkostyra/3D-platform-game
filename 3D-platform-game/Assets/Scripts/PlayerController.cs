@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        moveSpeed = 7;
-        jumpForce = 6;
-        distToGrounded = 1.1f;
+        //moveSpeed = 7;
+        //jumpForce = 6;
+        //distToGrounded = 1.1f;
          
         theRB = GetComponent<Rigidbody>();
     }
