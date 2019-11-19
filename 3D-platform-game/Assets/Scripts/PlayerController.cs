@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,11 +14,7 @@ public class PlayerController : MonoBehaviour
 
 
     private void Start()
-    {
-        //moveSpeed = 7;
-        //jumpForce = 6;
-        //distToGrounded = 1.1f;
-         
+    {         
         theRB = GetComponent<Rigidbody>();
     }
     
@@ -26,6 +22,11 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Jump();
+
+        if (Input.GetKeyDown("r"))
+        {
+            RestartCurrentLevel();
+        }
     }
 
     private void Move()
@@ -44,5 +45,10 @@ public class PlayerController : MonoBehaviour
     private bool Grounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, distToGrounded, ground);
+    }
+
+    private void RestartCurrentLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
