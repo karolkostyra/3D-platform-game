@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float distToGrounded;
 
+
     private Rigidbody theRB;
+    private Vector3 moveDirection;
     [SerializeField] LayerMask ground;
 
 
@@ -31,7 +33,16 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        theRB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, theRB.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
+
+        float yStore = theRB.velocity.y;
+
+        //theRB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, theRB.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
+        theRB.velocity = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
+        theRB.velocity = theRB.velocity.normalized * moveSpeed;
+
+        theRB.velocity = new Vector3(theRB.velocity.x, yStore, theRB.velocity.z);
+
+
     }
 
     private void Jump()
