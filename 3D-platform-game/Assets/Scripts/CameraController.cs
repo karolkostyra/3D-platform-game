@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] Transform pivot;
 
+    [SerializeField] bool invertY;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +35,30 @@ public class CameraController : MonoBehaviour
 
         // move the pivot instead of target
         float vertical = Input.GetAxis("Mouse Y") * rotateSpeed;
-        pivot.Rotate(vertical, 0, 0);
+
+        //pivot.Rotate(vertical, 0, 0);
+        if (invertY)
+        {
+            pivot.Rotate(vertical, 0, 0);
+        }else
+        {
+            pivot.Rotate(-vertical, 0, 0);
+        }
+
+
+
+        // limit up/down camera rotation
+
+        if (pivot.rotation.eulerAngles.x > 45f && pivot.rotation.eulerAngles.x < 180f)
+        {
+            pivot.rotation = Quaternion.Euler(45f, 0, 0);
+        }
+
+
+        if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 315f)
+        {
+            pivot.rotation = Quaternion.Euler(315f, 0, 0);
+        }
 
         float desiredYAngles = target.eulerAngles.y;
         float desiredXAngles = pivot.eulerAngles.x;
