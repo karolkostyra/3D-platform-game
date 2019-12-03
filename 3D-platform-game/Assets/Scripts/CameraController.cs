@@ -42,7 +42,7 @@ public class CameraController : MonoBehaviour
         transform.position = target.position - (rotation * offset);
 
 
-        if (transform.position.y < target.position.y)
+        if (transform.position.y <= target.position.y)
         {
             transform.position = new Vector3(transform.position.x, target.position.y - .5f, transform.position.z);
         }

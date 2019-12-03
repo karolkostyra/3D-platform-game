@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
         {
             RestartCurrentLevel();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            BackToMenu();
+        }
     }
 
     private void Move()
@@ -61,5 +66,10 @@ public class PlayerController : MonoBehaviour
     private void RestartCurrentLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
