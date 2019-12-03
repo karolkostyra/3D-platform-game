@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44658166, g: 0.49641883, b: 0.57482094, a: 1}
+  m_IndirectSpecularColor: {r: 0.44658124, g: 0.49641818, b: 0.57482016, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1127,6 +1127,7 @@ GameObject:
   - component: {fileID: 1336251880}
   - component: {fileID: 1336251884}
   - component: {fileID: 1336251885}
+  - component: {fileID: 1336251886}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1235,12 +1236,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc23dbd60d1310449c36bde75ca48f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
   jumpForce: 6
   distToGrounded: 1.05
   ground:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1336251886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336251879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458fc250abf8eb649b71dc0ac2906e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1339220930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,7 +1805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc23dbd60d1310449c36bde75ca48f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
   jumpForce: 6
   distToGrounded: 1.05
   ground:

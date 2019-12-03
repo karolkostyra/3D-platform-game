@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
+    public float moveSpeed { get; set; }
+    //[SerializeField] float moveSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] float distToGrounded;
 
@@ -16,7 +17,8 @@ public class PlayerController : MonoBehaviour
 
 
     private void Start()
-    {         
+    {
+        moveSpeed = 5;
         theRB = GetComponent<Rigidbody>();
     }
     
@@ -58,7 +60,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool Grounded()
+    public bool Grounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, distToGrounded, ground);
     }
