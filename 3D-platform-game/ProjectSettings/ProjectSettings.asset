@@ -617,10 +617,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: f3f7f70d-5c0e-4644-b68a-f238302c105e
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: 3D-platform-game
-  organizationId: deodorande
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
