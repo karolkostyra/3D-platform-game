@@ -74,4 +74,13 @@ public class PlayerController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "Spike_trap")
+        {
+            Debug.Log("You die");
+
+        }
+    }
 }
