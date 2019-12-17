@@ -34,7 +34,7 @@ public class DeathZone : MonoBehaviour
         Destroy(obj, 2);
     }
 
-    private void RespawnPlayer(GameObject obj)
+    public void RespawnPlayer(GameObject obj)
     {
         obj.transform.position = playerSpawnPosition;
         obj.transform.rotation = playerSpawnRotation;

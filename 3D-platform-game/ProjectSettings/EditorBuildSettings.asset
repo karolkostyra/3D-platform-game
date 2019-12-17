@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/001.unity
     guid: 8463590b71f5275458f18c995a6fa7d3
   - enabled: 1
-    path: Assets/Scenes/Levels/002 sprint error.unity
-    guid: f3ce0ee3c8f657042b0b4427a62b45e1
+    path: Assets/Scenes/Levels/002.unity
+    guid: 6108b08aeb7ad0d4f82059e6acb19310
   - enabled: 1
-    path: Assets/Scenes/Levels/level2.unity
+    path: Assets/Scenes/Levels/003.unity
     guid: 2fc018a2463cec7438e537e565b4867b
   m_configObjects: {}

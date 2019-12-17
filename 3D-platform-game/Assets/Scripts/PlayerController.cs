@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         //theRB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, theRB.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
         theRB.velocity = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
-        theRB.velocity = theRB.velocity.normalized * moveSpeed;
+        theRB.velocity = theRB.velocity * moveSpeed;
 
         theRB.velocity = new Vector3(theRB.velocity.x, yStore, theRB.velocity.z);
 
@@ -75,12 +75,23 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    /*
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Spike_trap")
+        if (collision.transform.tag == "SpikeTrap")
         {
-            Debug.Log("You die");
+            Debug.Log("Try again");
+        }
+    }
+    */
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "SpikeTrap")
+        {
+            Debug.Log("Try again");
+            DeathZone test = new DeathZone();
+            test.RespawnPlayer(gameObject);
         }
     }
 }
