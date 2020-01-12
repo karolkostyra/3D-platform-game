@@ -1263,6 +1263,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1011044408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1356,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+=======
+>>>>>>> f05fde60981bc42186c4be8dac94675dafdb5765
 =======
 >>>>>>> f05fde60981bc42186c4be8dac94675dafdb5765
 =======
@@ -2010,6 +2013,7 @@ MeshFilter:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1796583137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2059,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> f05fde60981bc42186c4be8dac94675dafdb5765
 =======
 >>>>>>> f05fde60981bc42186c4be8dac94675dafdb5765
 =======
@@ -2188,7 +2194,11 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 7
+=======
+  m_RootOrder: 5
+>>>>>>> f05fde60981bc42186c4be8dac94675dafdb5765
 =======
   m_RootOrder: 5
 >>>>>>> f05fde60981bc42186c4be8dac94675dafdb5765
