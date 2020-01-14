@@ -32,10 +32,12 @@ public class PlayerController : MonoBehaviour
             RestartCurrentLevel();
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             BackToMenu();
         }
+        */
     }
 
     private void Move()
