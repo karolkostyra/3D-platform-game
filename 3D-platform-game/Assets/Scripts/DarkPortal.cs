@@ -22,6 +22,7 @@ public class DarkPortal : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
+            Debug.Log(value);
                 Debug.Log("Teleport do " + setLevel);
                 SceneManager.LoadScene(setLevel);
             }
