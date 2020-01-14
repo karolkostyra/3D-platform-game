@@ -4,28 +4,18 @@ using UnityEngine;
 
 public class GoldPickup : MonoBehaviour
 {
-
     public int value;
+    private GoldManager gameManager;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        gameManager = FindObjectOfType<GoldManager>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            FindObjectOfType<GameManager>().AddGold(value);
-
+            gameManager.AddGold(value);
             Destroy(gameObject);
         }
     }
