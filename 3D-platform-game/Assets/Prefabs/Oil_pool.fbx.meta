@@ -1,33 +1,20 @@
 fileFormatVersion: 2
-guid: 0926fafff104b0843a86ed204e13f159
+guid: ea4ee28264d6d9244bc58d5295e1b321
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Gora
-    100002: //RootNode
-    100004: Spod
-    400000: Gora
-    400002: //RootNode
-    400004: Spod
-    2100000: Gora_plytki
-    2100002: Spod_plytki
-    2300000: Gora
-    2300002: Spod
-    3300000: Gora
-    3300002: Spod
-    4300000: Gora
-    4300002: Spod
+    100000: //RootNode
+    400000: //RootNode
+    2100000: plama_oleju
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Plama
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Gora_plytki
-    second: {fileID: 2100000, guid: 946766f8a39527943bd81c4ec6648e5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Spod_plytki
-    second: {instanceID: 0}
+      name: plama_oleju
+    second: {fileID: 2100000, guid: c1f1466d19b900142bb63f6181c9e849, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
