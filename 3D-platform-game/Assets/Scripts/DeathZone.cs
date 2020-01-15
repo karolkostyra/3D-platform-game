@@ -6,10 +6,12 @@ public class DeathZone : MonoBehaviour
 {
     private Vector3 playerSpawnPosition;
     private Quaternion playerSpawnRotation;
+    private GameObject player;
 
     private void Awake()
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+        
         playerSpawnPosition = player.transform.position;
         playerSpawnRotation = player.transform.rotation;
     }
@@ -21,7 +23,8 @@ public class DeathZone : MonoBehaviour
         switch (other.tag)
         {
             case "Player":
-                RespawnPlayer(other.gameObject);
+                player.GetComponent<PlayerController>().Die();
+                //RespawnPlayer(other.gameObject);
                 break;
             case "MovableObject":
                 DestroyThisObject(other.gameObject);

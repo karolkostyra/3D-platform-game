@@ -16,10 +16,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask ground;
 
 
+    private Vector3 playerSpawnPosition;
+    private Quaternion playerSpawnRotation;
+
     private void Start()
     {
         moveSpeed = 5;
         theRB = GetComponent<Rigidbody>();
+        playerSpawnPosition = transform.position;
+        playerSpawnRotation = transform.rotation;
     }
     
     private void Update()
@@ -92,8 +97,15 @@ public class PlayerController : MonoBehaviour
         if (other.transform.tag == "SpikeTrap")
         {
             Debug.Log("Try again");
-            DeathZone test = new DeathZone();
-            test.RespawnPlayer(gameObject);
+            Die();
+            //DeathZone test = new DeathZone();
+            //test.RespawnPlayer(gameObject);
         }
+    }
+
+    public void Die()
+    {
+        transform.position = playerSpawnPosition;
+        transform.rotation = playerSpawnRotation;
     }
 }
