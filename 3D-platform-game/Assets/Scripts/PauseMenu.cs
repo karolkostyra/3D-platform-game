@@ -36,8 +36,7 @@ public class PauseMenu : MonoBehaviour
         cameraController.enabled = true;
         pauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
-        isPaused = false;
+        OnPauseMenuExit();
     }
 
     public void Pause()
@@ -51,11 +50,19 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        OnPauseMenuExit();
         SceneManager.LoadScene(0);
     }
 
     public void Quit()
     {
+        OnPauseMenuExit();
         Application.Quit();
+    }
+
+    private void OnPauseMenuExit()
+    {
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 }

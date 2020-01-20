@@ -27,6 +27,28 @@ public class MainMenu : MonoBehaviour
         centerOfHeight = Screen.height / 2;
     }
 
+    public void NewGameButton()
+    {
+        SceneManager.LoadScene(2);
+        PlayerPrefs.SetInt("_unlockedLevels", 1);
+    }
+
+    public void LevelSelectButton()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void SettingsButton()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+
+    /*
     void OnGUI()
     {
         GUI.skin = skin;
@@ -48,4 +70,5 @@ public class MainMenu : MonoBehaviour
             Application.Quit();
         }
     }
+    */
 }
