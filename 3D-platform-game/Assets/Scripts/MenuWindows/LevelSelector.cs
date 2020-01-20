@@ -22,6 +22,14 @@ public class LevelSelector : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
     public void LoadLevelByName(string levelName)
     {
         SceneManager.LoadScene(levelName);
