@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float distToGrounded;
 
+    public bool double_jump = false;
+
+    private int count = 1;
 
     private Rigidbody theRB;
     private Vector3 moveDirection;
@@ -25,12 +28,20 @@ public class PlayerController : MonoBehaviour
         theRB = GetComponent<Rigidbody>();
         playerSpawnPosition = transform.position;
         playerSpawnRotation = transform.rotation;
+
     }
     
     private void Update()
     {
         Move();
-        Jump();
+        if (double_jump == false)
+        {
+            Jump();
+        }
+        else
+        {
+            DoubleJump();
+        }
 
         if (Input.GetKeyDown("r"))
         {
@@ -59,12 +70,35 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void Jump()
+    public void Jump()
     {
         if (Input.GetButtonDown("Jump") && Grounded())
         {
             theRB.velocity = new Vector3(theRB.velocity.x, jumpForce, theRB.velocity.z);
         }
+    }
+
+    public void DoubleJump()
+    {
+        if (count <= 3)
+        {
+            Debug.Log(count);
+            if (Input.GetButtonDown("Jump"))
+            {
+                count++;
+                theRB.velocity = new Vector3(theRB.velocity.x, jumpForce, theRB.velocity.z);
+                
+            }
+        }
+        else
+        {
+            StopPower();
+        }
+    }
+
+    public void StopPower()
+    {
+        double_jump = false;
     }
 
     public bool Grounded()
