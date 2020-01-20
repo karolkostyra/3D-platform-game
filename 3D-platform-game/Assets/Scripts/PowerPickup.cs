@@ -18,7 +18,7 @@ public class PowerPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            gameManager.AddPower(jump);
+            gameManager.AddPower(jump, value);
             Destroy(gameObject);
         }
     }

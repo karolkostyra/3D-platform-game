@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] float moveSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] float distToGrounded;
-
+    public int jump_jump;
     public bool double_jump = false;
 
     private int count = 1;
@@ -80,13 +80,13 @@ public class PlayerController : MonoBehaviour
 
     public void DoubleJump()
     {
-        if (count <= 3)
+        if (count <= 2)
         {
             Debug.Log(count);
             if (Input.GetButtonDown("Jump"))
             {
                 count++;
-                theRB.velocity = new Vector3(theRB.velocity.x, jumpForce, theRB.velocity.z);
+                theRB.velocity = new Vector3(theRB.velocity.x, jump_jump, theRB.velocity.z);
                 
             }
         }

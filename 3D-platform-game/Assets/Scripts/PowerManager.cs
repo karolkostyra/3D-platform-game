@@ -13,9 +13,10 @@ public class PowerManager : MonoBehaviour
         pc = FindObjectOfType<PlayerController>();
     }
 
-   public void AddPower(bool powerToAdd)
+   public void AddPower(bool powerToAdd, int jump_value)
     {
         pc = FindObjectOfType<PlayerController>();     
         pc.double_jump = powerToAdd;
+        pc.jump_jump = jump_value;
     }
 }
