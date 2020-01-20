@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MovableObject
   - SpikeTrap
+  - gold
   layers:
   - Default
   - TransparentFX
