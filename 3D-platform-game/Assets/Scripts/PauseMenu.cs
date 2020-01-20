@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : MouseCursorController
 {
     [SerializeField] private GameObject pauseMenu;
     private bool isPaused;
     private CameraController cameraController;
+    //private MouseCursorController mouseController;
 
     private void Start()
     {
@@ -35,7 +36,10 @@ public class PauseMenu : MonoBehaviour
     {
         cameraController.enabled = true;
         pauseMenu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
+        Lock();
+        Hide();
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         OnPauseMenuExit();
     }
 
@@ -43,7 +47,10 @@ public class PauseMenu : MonoBehaviour
     {
         cameraController.enabled = false;
         pauseMenu.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
+        Unlock();
+        Show();
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
         Time.timeScale = 0f;
         isPaused = true;
     }

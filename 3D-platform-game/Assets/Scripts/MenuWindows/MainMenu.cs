@@ -4,25 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MouseCursorController
 {
+    private MouseCursorController mouseController;
+
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            RemovePlayerPrefs();
-        }
+        Unlock();
+        //Cursor.lockState = CursorLockMode.None;
     }
 
     public void NewGameButton()
     {
         SceneManager.LoadScene(3);
         PlayerPrefs.SetInt("_unlockedLevels", 1);
+        Hide();
     }
 
     public void LevelSelectButton()
@@ -38,11 +34,5 @@ public class MainMenu : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
-    }
-
-    private void RemovePlayerPrefs()
-    {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("_unlockedLevels", 1);
     }
 }

@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LevelSelector : MonoBehaviour
+public class LevelSelector : MouseCursorController
 {
     public Button[] listOfLevelButtons;
     private Transform content;
+    private MouseCursorController mouseController;
 
     private void Start()
     {
@@ -33,6 +34,9 @@ public class LevelSelector : MonoBehaviour
     public void LoadLevelByName(string levelName)
     {
         SceneManager.LoadScene(levelName);
-        Cursor.lockState = CursorLockMode.Locked;
+        Lock();
+        Hide();
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 }
