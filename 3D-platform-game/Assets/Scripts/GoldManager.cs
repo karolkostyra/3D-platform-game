@@ -11,6 +11,6 @@ public class GoldManager : MonoBehaviour
     public void AddGold(int goldToAdd)
     {
         currentGold += goldToAdd;
-        goldText.text = "Gold: " + currentGold;
+        goldText.text = "Gold: " + currentGold + "/3";
     }
 }
